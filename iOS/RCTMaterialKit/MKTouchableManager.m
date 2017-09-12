@@ -6,8 +6,22 @@
 //  Copyright © 2015年 xinthink. All rights reserved.
 //
 
-#import <RCTViewManager.h>
-#import <RCTEventDispatcher.h>
+#if __has_include(<React/RCTViewManager.h>)
+  #import <React/RCTViewManager.h>
+#elif __has_include("React/RCTViewManager.h")
+  #import "React/RCTViewManager.h"
+#else
+  #import "RCTViewManager.h"
+#endif
+
+#if __has_include(<React/RCTEventDispatcher.h>)
+  #import <React/RCTEventDispatcher.h>
+#elif __has_include("React/RCTEventDispatcher.h")
+  #import "React/RCTEventDispatcher.h"
+#else
+  #import "RCTEventDispatcher.h"
+#endif
+
 #import <UIView+React.h>
 #import "MKTouchable.h"
 

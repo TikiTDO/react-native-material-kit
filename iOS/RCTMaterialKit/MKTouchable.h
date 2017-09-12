@@ -9,7 +9,13 @@
 #ifndef MKTouchable_h
 #define MKTouchable_h
 
-#import <RCTView.h>
+#if __has_include(<React/RCTView.h>)
+  #import <React/RCTView.h>
+#elif __has_include("React/RCTView.h")
+  #import "React/RCTView.h"
+#else
+  #import "RCTView.h"
+#endif
 
 @class MKTouchable;
 @protocol MKTouchableDelegate;
